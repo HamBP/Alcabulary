@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddVocabularyActivity">
+    tools:context=".mvvm.feature.add.AddVocabularyActivity">
 
     <EditText
         android:id="@+id/add_edit_vocabulary"

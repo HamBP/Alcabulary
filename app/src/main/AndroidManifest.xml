@@ -9,15 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyVocabulary">
-        <activity android:name=".SplashActivity">
+        <activity android:name=".mvvm.feature.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".StudyExampleActivity" />
-        <activity android:name=".AddVocabularyActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".mvvm.feature.example.StudyExampleActivity" />
+        <activity android:name=".mvvm.feature.add.AddVocabularyActivity" />
+        <activity android:name=".mvvm.feature.main.MainActivity">
         </activity>
     </application>
 

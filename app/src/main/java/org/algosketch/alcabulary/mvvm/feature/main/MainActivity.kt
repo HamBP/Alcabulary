@@ -1,9 +1,12 @@
-package org.algosketch.alcabulary
+package org.algosketch.alcabulary.mvvm.feature.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import org.algosketch.alcabulary.mvvm.feature.add.AddVocabularyActivity
+import org.algosketch.alcabulary.R
+import org.algosketch.alcabulary.mvvm.feature.example.StudyExampleActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
