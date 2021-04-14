@@ -5,13 +5,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mvvm.feature.add.AddVocabularyActivity">
+    tools:context=".mvvm.feature.add.AddVocabularyActivity"
+    android:background="#FFF0F5">
+
+    <TextView
+        android:id="@+id/title_add"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="단어 추가"
+        android:textColor="@color/black"
+        android:textSize="36sp" />
 
     <EditText
         android:id="@+id/add_edit_vocabulary"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="120dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="영어 단어"
@@ -25,7 +39,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="단어 뜻"
-        android:inputType="text"/>
+        android:inputType="text"
+        android:maxLines="1"/>
     <!-- TODO : 단어 뜻은 여러 개가 될 수도 있기 때문에 나중에 여러 가지 뜻도 쓸 수 있게 해야 함. -->
 
     <EditText
@@ -36,32 +51,41 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="예문 - 빈칸 가능"
-        android:inputType="text"/>
+        android:inputType="text"
+        android:maxLines="1"/>
 
     <TextView
         android:id="@+id/add_text_information"
         app:layout_constraintTop_toBottomOf="@id/add_edit_example_sentence"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="나중에 단어 뜻이랑 예문 추가할 수 있도록 만들 거예요."/>
+        android:text="나중에 단어 뜻이랑 예문 추가할 수 있도록 만들 거예요."
+        android:maxLines="1"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/add_btn_and_main"
         app:layout_constraintTop_toBottomOf="@id/add_text_information"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/add_btn_and_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="완료 후 메인"/>
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="24dp"
+        android:text="완료 후 메인"
+        android:background="@drawable/main_btn_background"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/add_btn_and_add"
         app:layout_constraintTop_toTopOf="@id/add_btn_and_main"
         app:layout_constraintStart_toEndOf="@id/add_btn_and_main"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="완료 후 추가 단어 입력"/>
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="24dp"
+        android:text="완료 후 추가 단어 입력"
+        android:background="@drawable/main_btn_background"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

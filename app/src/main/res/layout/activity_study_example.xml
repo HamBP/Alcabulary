@@ -15,13 +15,17 @@
         android:layout_height="wrap_content"
         android:text="믿기지 않겠지만 예문입니다."/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/example_text_verify"
         app:layout_constraintTop_toBottomOf="@id/example_text_sentence"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="정답 확인"/>
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="24dp"
+        android:text="정답 확인"
+        android:textSize="24sp"
+        android:background="@drawable/main_btn_background"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
