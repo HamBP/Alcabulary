@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    // room database
+    id 'kotlin-kapt'
 }
 
 android {
@@ -49,4 +51,5 @@ dependencies {
 
     // room database
     implementation "androidx.room:room-runtime:2.2.6"
+    kapt "androidx.room:room-compiler:2.2.6"
 }
