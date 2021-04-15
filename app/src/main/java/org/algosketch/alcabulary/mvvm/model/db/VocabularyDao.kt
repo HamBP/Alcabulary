@@ -11,7 +11,7 @@ interface VocabularyDao {
     fun getAll(): List<Vocabulary>
 
     @Insert
-    fun insertVocabulary(vararg vocabulary: Vocabulary)
+    fun insertWord(vararg vocabulary: Vocabulary)
 
     @Delete
     fun deleteVocabulary(vocabulary: Vocabulary)

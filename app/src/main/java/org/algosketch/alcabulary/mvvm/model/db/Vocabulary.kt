@@ -6,8 +6,8 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Vocabulary (
-    @PrimaryKey(autoGenerate = true) val vid: Int,
-    val vocabulary: String,
+    @PrimaryKey(autoGenerate = true) val vid: Int = 0,
+    @ColumnInfo(name = "vocabulary")val word: String,
     val meaning: String,
     @ColumnInfo(name = "example_sentence") val exampleSentence: String?
     )
