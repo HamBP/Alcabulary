@@ -1,31 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".mvvm.feature.example.StudyExampleActivity">
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="org.algosketch.alcabulary.mvvm.feature.example.StudyExampleViewModel" />
+    </data>
 
-    <TextView
-        android:id="@+id/example_text_sentence"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="믿기지 않겠지만 예문입니다."/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".mvvm.feature.example.StudyExampleActivity">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/example_text_verify"
-        app:layout_constraintTop_toBottomOf="@id/example_text_sentence"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingVertical="12dp"
-        android:paddingHorizontal="24dp"
-        android:text="정답 확인"
-        android:textSize="24sp"
-        android:background="@drawable/main_btn_background"/>
+        <TextView
+            android:id="@+id/example_text_sentence"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.exampleSentence}"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/example_text_verify"
+            app:layout_constraintTop_toBottomOf="@id/example_text_sentence"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="24dp"
+            android:text="정답 확인"
+            android:textSize="24sp"
+            android:background="@drawable/main_btn_background"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
