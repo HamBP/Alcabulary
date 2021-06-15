@@ -4,6 +4,7 @@ import android.icu.util.BuddhistCalendar
 import android.os.Bundle
 import android.os.Looper
 import android.os.Message
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -44,5 +45,10 @@ class StudyExampleViewModel : ViewModel() {
         override fun handleMessage(msg: Message) {
             _exampleSentence.value = msg.data.getString("exampleSentence", "놀랍게도 예문")
         }
+    }
+
+    fun onNextButton() {
+        // TODO : next 버튼 구현
+        Log.d("next button clicked!", "implement function.")
     }
 }
