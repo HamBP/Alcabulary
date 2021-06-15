@@ -2,6 +2,7 @@ package org.algosketch.alcabulary.mvvm.feature.example
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import org.algosketch.alcabulary.R
@@ -18,5 +19,9 @@ class StudyExampleActivity : AppCompatActivity() {
         binding.viewModel = viewModel
 
         viewModel.setVocabulary()
+
+        findViewById<Button>(R.id.example_text_verify).setOnClickListener {
+            // TODO : 빈칸 채워주기
+        }
     }
 }

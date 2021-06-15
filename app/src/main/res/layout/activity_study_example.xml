@@ -19,15 +19,22 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/example_text_verify"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="24dp"
+            android:textSize="24sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.exampleSentence}"/>
+            android:text="@{viewModel.exampleSentence}"
+            tools:text="this is sentence"
+            android:background="@drawable/main_btn_background"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/example_text_verify"
             app:layout_constraintTop_toBottomOf="@id/example_text_sentence"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingVertical="12dp"
