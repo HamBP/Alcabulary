@@ -7,9 +7,12 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.databinding.DataBindingUtil
 import org.algosketch.alcabulary.R
+import org.algosketch.alcabulary.databinding.ActivityAddVocabularyBinding
 
 class AddVocabularyActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityAddVocabularyBinding
     private val viewModel: AddVocabularyViewModel by viewModels()
 
     private var inputWord: EditText? = null
@@ -18,7 +21,7 @@ class AddVocabularyActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_vocabulary)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_add_vocabulary)
 
         inputWord = findViewById(R.id.add_edit_vocabulary)
         inputMeaning = findViewById(R.id.add_edit_meaning)
