@@ -14,7 +14,7 @@ import org.algosketch.alcabulary.mvvm.model.db.AppDatabase
 import java.util.logging.Handler
 
 class StudyExampleViewModel : ViewModel() {
-    private val _exampleSentence: MutableLiveData<String> = MutableLiveData<String>("놀랍게도 예문입니다.")
+    private val _exampleSentence = MutableLiveData("놀랍게도 예문입니다.")
     val exampleSentence: LiveData<String> = _exampleSentence
     private val handler = MyHandler(Looper.getMainLooper())
 

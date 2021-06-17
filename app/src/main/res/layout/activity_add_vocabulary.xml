@@ -37,7 +37,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="영어 단어"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:text="@={viewModel.inputWord}"/>
 
         <EditText
             android:id="@+id/add_edit_meaning"
@@ -48,7 +49,8 @@
             android:layout_height="wrap_content"
             android:hint="단어 뜻"
             android:inputType="text"
-            android:maxLines="1"/>
+            android:maxLines="1"
+            android:text="@={viewModel.inputMeaning}"/>
         <!-- TODO : 단어 뜻은 여러 개가 될 수도 있기 때문에 나중에 여러 가지 뜻도 쓸 수 있게 해야 함. -->
 
         <EditText
@@ -60,7 +62,8 @@
             android:layout_height="wrap_content"
             android:hint="예문 - 빈칸 가능"
             android:inputType="text"
-            android:maxLines="1"/>
+            android:maxLines="1"
+            android:text="@={viewModel.inputSentence}"/>
 
         <TextView
             android:id="@+id/add_text_information"
@@ -81,7 +84,8 @@
             android:paddingVertical="12dp"
             android:paddingHorizontal="24dp"
             android:text="완료 후 메인"
-            android:background="@drawable/main_btn_background"/>
+            android:background="@drawable/main_btn_background"
+            android:onClick="@{()->viewModel.requestAndClose()}"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/add_btn_and_add"
@@ -93,7 +97,8 @@
             android:paddingVertical="12dp"
             android:paddingHorizontal="24dp"
             android:text="완료 후 추가 단어 입력"
-            android:background="@drawable/main_btn_background"/>
+            android:background="@drawable/main_btn_background"
+            android:onClick="@{()->viewModel.requestAndNext()}"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
