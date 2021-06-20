@@ -1,54 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".mvvm.feature.main.MainActivity"
-    android:background="#FFF0F5">
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="org.algosketch.alcabulary.mvvm.feature.main.MainViewModel" />
+    </data>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/main_btn_add"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/main_btn_selection"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="120dp"
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:paddingVertical="12dp"
-        android:paddingHorizontal="24dp"
-        android:text="단어 입력"
-        android:textSize="24sp"
-        android:background="@drawable/main_btn_background"/>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".mvvm.feature.main.MainActivity"
+        android:background="#FFF0F5">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/main_btn_selection"
-        app:layout_constraintTop_toBottomOf="@id/main_btn_add"
-        app:layout_constraintBottom_toTopOf="@id/main_btn_study"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:paddingVertical="12dp"
-        android:paddingHorizontal="24dp"
-        android:text="단어 선택"
-        android:textSize="24sp"
-        android:background="@drawable/main_btn_background"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_add"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/main_btn_selection"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="120dp"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="24dp"
+            android:text="단어 입력"
+            android:textSize="24sp"
+            android:background="@drawable/main_btn_background"
+            android:onClick="@{()->viewModel.btnAddVocabulary()}"/>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/main_btn_study"
-        app:layout_constraintTop_toBottomOf="@id/main_btn_selection"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="120dp"
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:paddingVertical="12dp"
-        android:paddingHorizontal="24dp"
-        android:text="예문으로 공부"
-        android:textSize="24sp"
-        android:background="@drawable/main_btn_background"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_selection"
+            app:layout_constraintTop_toBottomOf="@id/main_btn_add"
+            app:layout_constraintBottom_toTopOf="@id/main_btn_study"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="24dp"
+            android:text="단어 선택"
+            android:textSize="24sp"
+            android:background="@drawable/main_btn_background"
+            android:onClick="@{()->viewModel.btnSelectVocabulary()}"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn_study"
+            app:layout_constraintTop_toBottomOf="@id/main_btn_selection"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="120dp"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="24dp"
+            android:text="예문으로 공부"
+            android:textSize="24sp"
+            android:background="@drawable/main_btn_background"
+            android:onClick="@{()->viewModel.btnStudyVocabulary()}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
