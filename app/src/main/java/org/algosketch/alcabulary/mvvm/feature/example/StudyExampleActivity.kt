@@ -19,9 +19,5 @@ class StudyExampleActivity : AppCompatActivity() {
         binding.viewModel = viewModel
 
         viewModel.setVocabulary()
-
-        findViewById<Button>(R.id.example_text_verify).setOnClickListener {
-            // TODO : 빈칸 채워주기
-        }
     }
 }

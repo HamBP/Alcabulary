@@ -41,7 +41,8 @@
             android:paddingHorizontal="24dp"
             android:text="정답 확인"
             android:textSize="24sp"
-            android:background="@drawable/main_btn_background"/>
+            android:background="@drawable/main_btn_background"
+            android:onClick="@{()->viewModel.onNextButton()}"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_next"

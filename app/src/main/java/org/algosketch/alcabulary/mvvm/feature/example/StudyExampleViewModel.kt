@@ -47,6 +47,11 @@ class StudyExampleViewModel : ViewModel() {
         }
     }
 
+    fun onVerifyButton() {
+        // TODO : 빈칸 채워주기
+        Log.d("verify button clicked!", "implement function.")
+    }
+
     fun onNextButton() {
         // TODO : next 버튼 구현
         Log.d("next button clicked!", "implement function.")
