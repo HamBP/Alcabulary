@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import org.algosketch.alcabulary.mvvm.feature.add.AddVocabularyActivity
 import org.algosketch.alcabulary.R
 import org.algosketch.alcabulary.databinding.ActivityMainBinding
@@ -21,5 +22,7 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
+
+        viewModel.shouldStartActivity.observe(this, Observer { startActivity(it) })
     }
 }
