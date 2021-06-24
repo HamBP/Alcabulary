@@ -8,6 +8,8 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import org.algosketch.alcabulary.R
 import org.algosketch.alcabulary.databinding.ActivityAddVocabularyBinding
 
@@ -20,5 +22,7 @@ class AddVocabularyActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_add_vocabulary)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
+
+        viewModel.shouldFinish.observe(this, Observer { finish() })
     }
 }

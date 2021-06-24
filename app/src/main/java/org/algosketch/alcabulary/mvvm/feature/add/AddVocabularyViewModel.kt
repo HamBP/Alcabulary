@@ -17,6 +17,7 @@ class AddVocabularyViewModel : ViewModel() {
     val inputWord = ObservableField("")
     val inputMeaning = ObservableField("")
     val inputSentence = ObservableField("")
+    val shouldFinish = MutableLiveData<Void?>()
 
     fun postWord(word: String, meaning: String, exampleSentence: String?) {
         val insertData = Vocabulary(word = word, meaning = meaning, exampleSentence = exampleSentence)
@@ -46,7 +47,7 @@ class AddVocabularyViewModel : ViewModel() {
     fun requestAndClose() {
         if(isCorrect()) {
             request()
-            //finish()
+            shouldFinish.postValue(null)
         }
         else Toast.makeText(MyApplication.ApplicationContext(), "단어 혹은 뜻을 입력하지 않았습니다.", Toast.LENGTH_SHORT).show()
     }
@@ -54,7 +55,7 @@ class AddVocabularyViewModel : ViewModel() {
     fun requestAndNext() {
         if(isCorrect()) {
             request()
-            //finish()
+            shouldFinish.postValue(null)
         }
         else Toast.makeText(MyApplication.ApplicationContext(), "단어 혹은 뜻을 입력하지 않았습니다.", Toast.LENGTH_SHORT).show()
     }
