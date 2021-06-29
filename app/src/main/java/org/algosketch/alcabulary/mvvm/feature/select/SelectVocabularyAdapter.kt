@@ -27,5 +27,5 @@ class SelectVocabularyAdapter(private val wordList: List<WordVO>) : RecyclerView
         val sentence: TextView = view.findViewById(R.id.sentence)
     }
 
-    data class WordVO(val word: String, val mean: String, val sentence: String)
+    data class WordVO(val word: String, val mean: String, val sentence: String?)
 }

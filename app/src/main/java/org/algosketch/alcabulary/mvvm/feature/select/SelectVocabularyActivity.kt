@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import org.algosketch.alcabulary.R
 import org.algosketch.alcabulary.databinding.ActivitySelectVocabularyBinding
@@ -18,16 +19,13 @@ class SelectVocabularyActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
-        val recyclerView = findViewById<RecyclerView>(R.id.select_vocabulary_recyclerview)
-        recyclerView.adapter = SelectVocabularyAdapter(getWordList())
-    }
+        // 이게 좋은 코드인지 모르겠음.
+        viewModel.wordList?.observe(this, Observer {
+            val list = viewModel.wordList?.value
+            if(list != null)
+                binding.selectVocabularyRecyclerview.adapter = SelectVocabularyAdapter(list)
+        })
 
-    fun getWordList(): List<SelectVocabularyAdapter.WordVO> {
-        val wordList: ArrayList<SelectVocabularyAdapter.WordVO> = ArrayList()
-        wordList.add(
-            SelectVocabularyAdapter.WordVO("word", "단어", "this is a word")
-        )
-
-        return wordList
+        viewModel.getWordList()
     }
 }
