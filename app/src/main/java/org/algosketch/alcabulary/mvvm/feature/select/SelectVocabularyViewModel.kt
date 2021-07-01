@@ -10,26 +10,23 @@ import org.algosketch.alcabulary.mvvm.model.db.VocabularyDao
 import java.util.*
 
 class SelectVocabularyViewModel : ViewModel() {
-    var wordList: MutableLiveData<List<SelectVocabularyAdapter.WordVO>>? = null
+    val wordList = MutableLiveData<List<SelectVocabularyAdapter.WordVO>>()
 
     fun getWordList() {
-        val db = Room.databaseBuilder(
-            MyApplication.ApplicationContext(),
-            AppDatabase::class.java,
-            "vocabulary"
-        ).build()
-
-        // TODO : 리스트 출력 안 됨.
         Thread {
+            val db = Room.databaseBuilder(
+                MyApplication.ApplicationContext(),
+                AppDatabase::class.java,
+                "vocabulary"
+            ).build()
+
             val words = db.VocabularyDao().getAll()
 
             var inputWords: List<SelectVocabularyAdapter.WordVO> = words.map {
                 Log.d("word", it.word)
                 SelectVocabularyAdapter.WordVO(it.word, it.meaning, it.exampleSentence)
             }
-            Log.d("123", "123")
-            inputWords = listOf(SelectVocabularyAdapter.WordVO("word", "meaning", "example"))
-            wordList?.postValue(inputWords)
+            wordList.postValue(inputWords)
         }.start()
     }
 }
