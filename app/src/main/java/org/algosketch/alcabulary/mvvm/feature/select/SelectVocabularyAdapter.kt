@@ -3,6 +3,7 @@ package org.algosketch.alcabulary.mvvm.feature.select
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import org.algosketch.alcabulary.R
@@ -17,6 +18,7 @@ class SelectVocabularyAdapter(private val wordList: List<WordVO>) : RecyclerView
         holder.word.text = wordList[position].word
         holder.mean.text = wordList[position].mean
         holder.sentence.text = wordList[position].sentence
+        holder.checkBox.isChecked = wordList[position].isChecked
     }
 
     override fun getItemCount(): Int = wordList.size
@@ -25,7 +27,8 @@ class SelectVocabularyAdapter(private val wordList: List<WordVO>) : RecyclerView
         val word: TextView = view.findViewById(R.id.word)
         val mean: TextView = view.findViewById(R.id.mean)
         val sentence: TextView = view.findViewById(R.id.sentence)
+        val checkBox: CheckBox = view.findViewById(R.id.checkbox)
     }
 
-    data class WordVO(val word: String, val mean: String, val sentence: String?)
+    data class WordVO(val word: String, val mean: String, val sentence: String?, val isChecked: Boolean)
 }

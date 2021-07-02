@@ -24,7 +24,7 @@ class SelectVocabularyViewModel : ViewModel() {
 
             var inputWords: List<SelectVocabularyAdapter.WordVO> = words.map {
                 Log.d("word", it.word)
-                SelectVocabularyAdapter.WordVO(it.word, it.meaning, it.exampleSentence)
+                SelectVocabularyAdapter.WordVO(it.word, it.meaning, it.exampleSentence, true)
             }
             wordList.postValue(inputWords)
         }.start()

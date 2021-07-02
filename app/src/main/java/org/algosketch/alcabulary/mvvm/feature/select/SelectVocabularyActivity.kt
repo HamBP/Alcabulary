@@ -21,8 +21,7 @@ class SelectVocabularyActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
-        binding.selectVocabularyRecyclerview.adapter = SelectVocabularyAdapter(listOf(SelectVocabularyAdapter.WordVO("wor", "meaning", "example")))
-
+        binding.selectVocabularyRecyclerview.adapter = SelectVocabularyAdapter(listOf(SelectVocabularyAdapter.WordVO("word", "meaning", "example", true)))
         // 이게 좋은 코드인지 모르겠음.
         viewModel.wordList.observe(this, Observer {
             binding.selectVocabularyRecyclerview.adapter = SelectVocabularyAdapter(it)
