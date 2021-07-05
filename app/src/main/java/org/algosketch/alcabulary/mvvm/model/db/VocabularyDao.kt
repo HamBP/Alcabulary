@@ -4,6 +4,8 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 
 @Dao
 interface VocabularyDao {
@@ -15,4 +17,10 @@ interface VocabularyDao {
 
     @Delete
     fun deleteVocabulary(vocabulary: Vocabulary)
+}
+
+val MIGRATION_1_2 = object : Migration(1, 2) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL("ALTER TABLE vocabulary ADD COLUMN is_checked BOOLEAN")
+    }
 }

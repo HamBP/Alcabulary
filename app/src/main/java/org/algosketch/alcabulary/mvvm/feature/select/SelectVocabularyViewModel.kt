@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.room.Room
 import org.algosketch.alcabulary.mvvm.global.MyApplication
 import org.algosketch.alcabulary.mvvm.model.db.AppDatabase
+import org.algosketch.alcabulary.mvvm.model.db.MIGRATION_1_2
 import org.algosketch.alcabulary.mvvm.model.db.VocabularyDao
 import java.util.*
 
@@ -18,7 +19,7 @@ class SelectVocabularyViewModel : ViewModel() {
                 MyApplication.ApplicationContext(),
                 AppDatabase::class.java,
                 "vocabulary"
-            ).build()
+            ).addMigrations(MIGRATION_1_2).build()
 
             val words = db.VocabularyDao().getAll()
 
