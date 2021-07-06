@@ -10,5 +10,5 @@ data class Vocabulary (
     @ColumnInfo(name = "vocabulary")val word: String,
     val meaning: String,
     @ColumnInfo(name = "example_sentence") val exampleSentence: String?,
-    @ColumnInfo(name = "is_checked") val isChecked: Boolean = true
+    @ColumnInfo(name = "is_checked") val isChecked: Int = 1
     )

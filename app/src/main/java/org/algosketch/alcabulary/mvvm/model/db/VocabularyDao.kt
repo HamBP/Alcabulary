@@ -21,6 +21,6 @@ interface VocabularyDao {
 
 val MIGRATION_1_2 = object : Migration(1, 2) {
     override fun migrate(database: SupportSQLiteDatabase) {
-        database.execSQL("ALTER TABLE vocabulary ADD COLUMN is_checked BOOLEAN")
+        database.execSQL("ALTER TABLE vocabulary ADD COLUMN is_checked INTEGER")
     }
 }
